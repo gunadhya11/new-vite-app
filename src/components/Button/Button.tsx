@@ -12,10 +12,11 @@ const Button = ({ label, type }: { label: string, type: string }) => {
       ["button", { scale: 1 }, { duration: 0.25 }],
     ]);
   };
-  const bgclass = type==='primary' ?'bg-primary':type==='secondary'?'bg-secondary':'bg-default';
+  const bgclass = type==='primary' ?'bg-primary':type==='secondary'?'bg-secondary':type==='tirtiary'?'bg-tirtiary':'bg-default';
+  const textcolor = type==='default'? 'text-black':'text-white';
   return (
     <div ref={scope}>
-      <button onClick={buttonClick} className={`border-none relative overflow-hidden text-white rounded-full  px-3 py-2 ${bgclass}`}>{label}
+      <button onClick={buttonClick} className={`border-none relative overflow-hidden ${textcolor} rounded-full  px-3 py-2 ${bgclass}`}>{label}
         <div className="glare h-36 w-4 bg-white/35 absolute -top-12 -left-8 rotate-45"></div>
       </button>
     </div>
